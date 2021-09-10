@@ -72,7 +72,7 @@ To wrap this all together, we simply loop through all the files in some director
 Once we know the language of a given file, we move it into a subdirectory specific to that language code.
 
 Lastly, we’ll print out the number of files we found in each language.
-```ython
+```python
 from os import listdir, mkdir, path, rename
 import re
 def organize_files_by_language(dirname):
