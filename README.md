@@ -95,9 +95,9 @@ If you want to go further, you could make filetype-detection into a more robust 
 
 Tools used:
 
-Algorithmia Client for Python
-Language Identification Algorithm
-Python-Docx Package
+# Algorithmia Client for Python
+# Language Identification Algorithm
+# Python-Docx Package
 Here’s the whole script, ready for you to cut-and-paste, or grab it (and other fun examples) from Algorithmia’s sample-apps repository on Github
 ```python
 import Algorithmia
