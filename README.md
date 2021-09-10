@@ -9,8 +9,9 @@ Step 1: Install the Algorithmia Client
 While this demo is written using our Python client, our services are equally easy to use in a variety of other programming languages, or even via cURL.
 
 Installing the Algorithmia client is simple. Just use pip to install the package:
-
+```
 pip install algorithmia
+```
 
 You’ll also need a free Algorithmia account, which includes 5,000 free credits a month – enough to organize thousands of documents by language.
 
@@ -18,7 +19,7 @@ To get started, simply sign up, then grab your API key.
 
 Step 2: Call the Language Detection Microservice
 It only takes a couple lines of code to call any of our algorithms. Let’s wrap them up in a function:
-
+```python
 import Algorithmia
 client = Algorithmia.client('your_api_key')
 def detect_language(text):
@@ -27,6 +28,7 @@ algo = client.algo('nlp/LanguageIdentification/1.0.0')
 result = algo.pipe({'sentence':text}).result
 result_sorted = sorted(result, key=lambda r: r['confidence'], reverse=True)
 return result_sorted[0]['language']
+```
 You can see that we’re using nlp/LanguageIdentification in our call to client.algo().
 
 We’ve also appended the most recent version number (1.0.0) to that call. We could choose to omit the version number, and call client.algo("nlp/LanguageIdentification") instead — but this could potentially break if the algorithm ever changes. By indicating a specific version number you future-proof your code.
@@ -43,11 +45,12 @@ Don’t forget to replace “your_api_key” with your own key, or you’ll get 
 
 Step 3: Extract Text From a File
 It’s pretty easy to read a text file’s contents in Python, but many of us keep documents in Microsoft Word format as well. Fortunately, the python-docx Python library can easily extract the text from a Microsoft Word (.docx) file:
-
+```
 pip install python-docx
+```
 
 Then we can create a simple utility function to extract the text from both .txt and.docx files:
-
+```python
 import docx
 def extract_text(filename):
 """Extract and return the text from a document"""
@@ -60,6 +63,7 @@ return text
 else:
 with open(filename) as f:
 return f.read()
+```
 This will return garbage if we send it any other file type (for example, an .exe). We’ll handle that in the next step.
 
 Step 4: Loop Through The Documents
