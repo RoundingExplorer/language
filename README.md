@@ -54,15 +54,15 @@ Then we can create a simple utility function to extract the text from both .txt 
 import docx
 def extract_text(filename):
 """Extract and return the text from a document"""
-if filename.endswith('.docx'):
-document = docx.Document(filename)
-text = 'n'.join([
-paragraph.text for paragraph in document.paragraphs
-])
-return text
-else:
-with open(filename) as f:
-return f.read()
+  if filename.endswith('.docx'):
+    document = docx.Document(filename)
+    text = 'n'.join([
+    paragraph.text for paragraph in document.paragraphs
+    ])
+    return text
+  else:
+    with open(filename) as f:
+    return f.read()
 ```
 This will return garbage if we send it any other file type (for example, an .exe). We’ll handle that in the next step.
 
