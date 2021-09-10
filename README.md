@@ -72,7 +72,7 @@ To wrap this all together, we simply loop through all the files in some director
 Once we know the language of a given file, we move it into a subdirectory specific to that language code.
 
 Lastly, we’ll print out the number of files we found in each language.
-
+```ython
 from os import listdir, mkdir, path, rename
 import re
 def organize_files_by_language(dirname):
@@ -88,6 +88,7 @@ mkdir(targetpath)
 rename(filepath, path.join(targetpath, filename))
 counts[language] = counts[language]+1 if language in counts else 1
 print counts
+```
 …and that’s all!  We now have a script which can examine all the .txt and .docx files in a directory, rearrange them into subdirectories by language code, and print out the number of files per language.
 
 If you want to go further, you could make filetype-detection into a more robust machine learning model using filemagic, add support for reading RTF or HTML files, or loop through files in Dropbox or Amazon S3 via our Data API.
