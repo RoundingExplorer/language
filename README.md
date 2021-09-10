@@ -98,7 +98,7 @@ Algorithmia Client for Python
 Language Identification Algorithm
 Python-Docx Package
 Here’s the whole script, ready for you to cut-and-paste, or grab it (and other fun examples) from Algorithmia’s sample-apps repository on Github
-
+```python
 import Algorithmia
 import docx
 from os import listdir, mkdir, path, rename
@@ -135,3 +135,4 @@ rename(filepath, path.join(targetpath, filename))
 counts[language] = counts[language]+1 if language in counts else 1
 print counts
 organize_files_by_language('/some/file/path/')
+```
