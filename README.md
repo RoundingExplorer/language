@@ -9,7 +9,7 @@ Step 1: Install the Algorithmia Client
 While this demo is written using our Python client, our services are equally easy to use in a variety of other programming languages, or even via cURL.
 
 Installing the Algorithmia client is simple. Just use pip to install the package:
-```
+```cmd
 pip install algorithmia
 ```
 
@@ -45,7 +45,7 @@ Don’t forget to replace “your_api_key” with your own key, or you’ll get 
 
 Step 3: Extract Text From a File
 It’s pretty easy to read a text file’s contents in Python, but many of us keep documents in Microsoft Word format as well. Fortunately, the python-docx Python library can easily extract the text from a Microsoft Word (.docx) file:
-```
+```cmd
 pip install python-docx
 ```
 
