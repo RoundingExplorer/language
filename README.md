@@ -77,16 +77,16 @@ from os import listdir, mkdir, path, rename
 import re
 def organize_files_by_language(dirname):
 """Examine all .txt and .docx files and place them in language-specific subdirectories"""
-counts = {}
-for filename in listdir(dirname):
-if re.match('.*.txt|.*.docx', filename):
-filepath = path.join(dirname, filename)
-language = detect_language(extract_text(filepath))
-targetpath = path.join(dirname, language)
-if not path.exists(targetpath):
-mkdir(targetpath)
-rename(filepath, path.join(targetpath, filename))
-counts[language] = counts[language]+1 if language in counts else 1
+  counts = {}
+  for filename in listdir(dirname):
+    if re.match('.*.txt|.*.docx', filename):
+      filepath = path.join(dirname, filename)
+       language = detect_language(extract_text(filepath))
+        targetpath = path.join(dirname, language)
+      if not path.exists(targetpath):
+         mkdir(targetpath)
+         rename(filepath, path.join(targetpath, filename))
+         counts[language] = counts[language]+1 if language in counts else 1
 print counts
 ```
 …and that’s all!  We now have a script which can examine all the .txt and .docx files in a directory, rearrange them into subdirectories by language code, and print out the number of files per language.
